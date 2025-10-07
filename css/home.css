@@ -1,0 +1,88 @@
+.hero {
+    height: 500px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/dougies_storefront.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.gallery {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider-container {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+}
+
+.slider-container img:first-child {
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.slider-btn.prev {
+    left: 0;
+}
+
+.slider-btn.next {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
