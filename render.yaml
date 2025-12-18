@@ -1,5 +1,5 @@
 services:
-  # 1. The Backend (Node.js API)
+  # 1. The Backend
   - type: web
     name: restaurant-backend
     runtime: node
@@ -11,13 +11,13 @@ services:
         sync: false
     plan: free
 
-  # 2. The Frontend (React Static Site)
-  - type: static
+  # 2. The Frontend (Served as a Web Service)
+  - type: web
     name: restaurant-frontend
-    runtime: static
+    runtime: node
     root: .
     buildCommand: npm install && npm run build
-    publishDir: dist
+    startCommand: npm run preview
     envVars:
       - key: VITE_API_URL
         fromService:
