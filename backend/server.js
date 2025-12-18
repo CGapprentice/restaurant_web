@@ -12,7 +12,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Cluster0';
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins for now to fix the NetworkError
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Connect to MongoDB

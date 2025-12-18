@@ -17,9 +17,8 @@ services:
     runtime: node
     # Runs in root by default
     buildCommand: npm install && npm run build
-    # Use 'serve' to serve the 'dist' folder on the correct port
     startCommand: npx serve -s dist -l $PORT
     envVars:
       - key: VITE_API_URL
-        value: https://restaurant-backend.onrender.com
+        value: https://restaurant-backend-en6o.onrender.com # UPDATED to your actual backend URL
     plan: free
