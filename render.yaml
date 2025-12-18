@@ -8,7 +8,7 @@ services:
     startCommand: npm start
     envVars:
       - key: MONGODB_URI
-        sync: false # You will enter this manually in Render Dashboard
+        sync: false
     plan: free
 
   # 2. The Frontend (React Static Site)
