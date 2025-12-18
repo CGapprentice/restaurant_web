@@ -9,16 +9,17 @@ services:
     envVars:
       - key: MONGODB_URI
         sync: false
-    plan: free # Included free plan
+    plan: free
 
   # 2. The Frontend
   - type: web
     name: restaurant-frontend
     runtime: node
-    # Runs in root by default, so no 'cd' needed here
+    # Runs in root by default
     buildCommand: npm install && npm run build
-    startCommand: npm run preview
+    # Use 'serve' to serve the 'dist' folder on the correct port
+    startCommand: npx serve -s dist -l $PORT
     envVars:
       - key: VITE_API_URL
-        value: https://restaurant-backend.onrender.com # Directly assign the predictable URL
-    plan: free # Included free plan
+        value: https://restaurant-backend.onrender.com
+    plan: free
