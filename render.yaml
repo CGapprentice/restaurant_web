@@ -3,19 +3,19 @@ services:
   - type: web
     name: restaurant-backend
     runtime: node
-    root: backend
-    buildCommand: npm install
-    startCommand: npm start
+    # Remove 'root' property and use 'cd' instead
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: MONGODB_URI
         sync: false
     plan: free
 
-  # 2. The Frontend (Served as a Web Service)
+  # 2. The Frontend
   - type: web
     name: restaurant-frontend
     runtime: node
-    root: .
+    # Runs in root by default, so no 'cd' needed here
     buildCommand: npm install && npm run build
     startCommand: npm run preview
     envVars:
