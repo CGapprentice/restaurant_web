@@ -20,7 +20,4 @@ services:
     startCommand: npm run preview
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: restaurant-backend
-          property: url
+        value: https://restaurant-backend.onrender.com # Directly assign the predictable URL
