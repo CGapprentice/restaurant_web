@@ -1,0 +1,26 @@
+services:
+  # 1. The Backend (Node.js API)
+  - type: web
+    name: restaurant-backend
+    runtime: node
+    root: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false # You will enter this manually in Render Dashboard
+    plan: free
+
+  # 2. The Frontend (React Static Site)
+  - type: static
+    name: restaurant-frontend
+    runtime: static
+    root: .
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: restaurant-backend
+          property: url
