@@ -9,7 +9,7 @@ services:
     envVars:
       - key: MONGODB_URI
         sync: false
-    plan: free
+    plan: free # Included free plan
 
   # 2. The Frontend
   - type: web
@@ -21,3 +21,4 @@ services:
     envVars:
       - key: VITE_API_URL
         value: https://restaurant-backend.onrender.com # Directly assign the predictable URL
+    plan: free # Included free plan
